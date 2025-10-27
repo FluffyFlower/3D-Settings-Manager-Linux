@@ -13,5 +13,5 @@ A crossplatform GUI helping to streamline configuration of DXVK (`dxvk.conf`), a
 Manually creating, and editing the .conf files for DXVK and vkBasalt is fairly involved and laborious, in place of dechipering these cryptic files this app provides a user friendly graphical interface to manage all available options, placing the configuration files in the correct locations and keeping track of games and their settings in app for tweaking.
 
 ## Key Features
-- Per Game Configuration: 
+- ### Per Game Configuration: 
     Easy to navigate interface with detailed tooltips and dynamic settings tabs (Anti-Aliasing, Sharpening, VSync, etc)
