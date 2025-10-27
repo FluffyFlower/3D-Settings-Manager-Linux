@@ -1,5 +1,5 @@
-# 3D-Settings-Manager-Linux
-Linux 3D Settings Manager - A GUI for DXVK and VKBasalt configuration.
+# 3D Settings Manager Linux 
+A crossplatform GUI helping to streamline configuration of DXVK (`dxvk.conf`), and VKbasalt (`vkBasalt.conf`) settings for individual games when playing via proton / wine. 
 
 <html>
   <head>
