@@ -10,6 +10,8 @@ Version    : 0.0.3
 Description: Logging output system for entire app.
 """
 
+# File no longer used
+
 # ------------------------------------------------------ #
 #                                                        #
 # ██████                                                 #
