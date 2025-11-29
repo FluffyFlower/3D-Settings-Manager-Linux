@@ -1,14 +1,14 @@
 """
-File:
-    __init__.py
-Author:
-    Fluffy Flower (Martin Wylde)
-Date:
-    03/05/2024
-Description:
-    Initialization file for the 3D Settings Manager package.
-    This package provides a collection of classes representing various
-    graphics settings to be manged for either VKBasalt or DXVK including:
+File       : __init__.py
+Author     : Fluffy Flower (Martin Wylde)
+Contact    :
+    Email   - martincw1989@gmail.com
+    Telegram- @FluffyFlower
+    Discord - fluffy_flower
+Date       : 24/05/2024
+Version    : 1.0.0
+Description: Initialization file for the 3D Settings Manager package.
+This package provides a collection of classes representing various graphics settings to be manged for either VKBasalt or DXVK including:
     Anistropic Filtering (AF),
     Context Adaptive Shading (CAS),
     DirectX 3D Feature Level (D3DLEVEL),
@@ -17,15 +17,13 @@ Description:
     High Dynamic Range (HDR),
     Subpixel Morphological Anti-Aliasing (SMAA), and
     Vertical Synchronization (VSYNC).
-
-    Each setting class is contained in its respective module and is imported
-    here to provide a convenient interface for users of the package.
+Each setting class is contained in its respective module and is imported here to provide a convenient interface for users of the package.
 """
 
 from Window.Settings.AF import (
-    Anistropic_Filtering_Enable,
-    Anistropic_Filtering_Level,
-    Anistropic_Filtering_Level_D3D9,
+    Anisotropic_Filtering_Enable,
+    Anisotropic_Filtering_Level,
+    Anisotropic_Filtering_Level_D3D9,
     LOD_Enable, LOD_Bias, LOD_Bias_D3D9,
     Clamp_Negative_LOD,
     Clamp_Negative_LOD_D3D9)

@@ -1,24 +1,16 @@
 """
-File:
-    DLS.py
-Author:
-    Fluffy Flower (Martin Wylde)
-Date:
-    23/01/2025
-Version:
-    0.1.1
-Description:
-    Contains classes representing various settings related to DLS (Denoised
-    Luma Sharpening), along with a base class for all graphics settings.
-
-    Each setting class includes attributes for title, options, tooltip header,
-    and tooltip body, along with methods for retrieving these attributes.
-
-    Additionally, global style variables are defined for consistent styling of
-    HTML elements within the settings.
-
-    These settings specifically pertain to the VKBasalt post-processing tool's
-    DLS (Denoised Luma Sharpening) settings.
+File       : DLS.py
+Author     : Fluffy Flower (Martin Wylde)
+Contact    :
+    Email   - martincw1989@gmail.com
+    Telegram- @FluffyFlower
+    Discord - fluffy_flower
+Date       : 23/01/2025
+Version    : 1.0.0
+Description: Contains classes representing various settings related to DLS (Denoised Luma Sharpening), along with a base class for all graphics settings.
+Each setting class includes attributes for title, options, tooltip header, and tooltip body, along with methods for retrieving these attributes.
+Additionally, global style variables are defined for consistent styling of HTML elements within the settings.
+These settings specifically pertain to the VKBasalt post-processing tool's DLS (Denoised Luma Sharpening) settings.
 """
 
 # Global style variables

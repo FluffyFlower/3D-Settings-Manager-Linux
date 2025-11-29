@@ -1,23 +1,16 @@
 """
-File:
-    VSYNC.py
-Author:
-    Fluffy Flower (Martin Wylde)
-Date:
-    23/01/2025
-Version:
-    0.1.1
-Description:
-    Contains classes representing various settings related to Vsync, and frame
-    limiting, along with a base class for all graphics settings.
-
-    Each setting class includes attributes for title, options, tooltip header,
-    and tooltip body, along with methods for retrieving these attributes.
-
-    Additionally, global style variables are defined for consistent styling of
-    HTML elements within the settings.
-
-    These settings specifically pertain to the DXVK tool's Vsync settings.
+File       : VSYNC.py
+Author     : Fluffy Flower (Martin Wylde)
+Contact    :
+    Email   - martincw1989@gmail.com
+    Telegram- @FluffyFlower
+    Discord - fluffy_flower
+Date       : 23/01/2025
+Version    : 1.0.0
+Description: Contains classes representing various settings related to Vsync, and frame limiting, along with a base class for all graphics settings.
+Each setting class includes attributes for title, options, tooltip header, and tooltip body, along with methods for retrieving these attributes.
+Additionally, global style variables are defined for consistent styling of HTML elements within the settings.
+These settings specifically pertain to the DXVK tool's Vsync settings.
 """
 
 # Global style variables
@@ -172,7 +165,7 @@ class VSync_Level(BaseSetting):
             >>> vsync_setting.get_tooltip_body()
         """
         title = f'<p>&nbsp;&nbsp;&nbsp;&nbsp;-VSync Level&nbsp;&nbsp;&nbsp;&nbsp;{u"\u2753"}</p>'
-        options = ["Select Option...", "1 Frame", "2 Frames"]
+        options = ["Select Option...", "1 Frame", "2 Frames", "Off"]
         tooltip_header = f'<h3 {header}>Select to enable VSync and how many frames</h3>'
         tooltip_body = f'<p {bodyTop}>VSync (Vertical Synchronisation) Vertical Sync (VSync) synchronizes the frame rate of a game with the refresh rate of your monitor to prevent screen tearing. It ensures smoother visuals but may introduce input lag. If frames drop below the VSync level, it can result in performance issues such as stuttering or lower frame rates.</p><p {bodyBot}>1 Frame - Synchronizes the rendering of frames with the display refresh rate, ensuring one frame is displayed per refresh cycle.<br>2 Frames - Synchronizes rendering with the display refresh rate, buffering two frames for reduced tearing and slightly higher latency.</p>'
         rule = False
@@ -328,7 +321,7 @@ class Frame_Limit_D3D9(BaseSetting):
             >>> frame_limit_d3d9_setting.get_tooltip_body()
         """
         title = f'<p>&nbsp;&nbsp;&nbsp;&nbsp;-Frame Limit (D3D9 Applications)&nbsp;&nbsp;&nbsp;&nbsp;{u"\u2753"}</p>'
-        options = ["Select Option...", "30", "60", "75", "120", "144", "240", "Off"]
+        options = ["Select Option...", "30", "60", "75", "120", "144", "240"]
         tooltip_header = f'<h3 {header}>Select the frame limit (D3D9 applications only)</h3>'
         tooltip_body = f'<p {bodyTop}>Frame limiting is a technique used to cap the maximum number of frames rendered per second, controlling the rate at which the GPU generates frames for smoother performance.</p><p {bodyBot}>The most common values are:<br>30Hz (30FPS)<br>60Hz (60FPS)<br>75Hz (75FPS)<br>120Hz (120FPS)<br>144Hz (144FPS)<br>240Hz (240FPS)</p>'
         rule = False

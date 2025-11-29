@@ -43,6 +43,11 @@ class OutputLog():
 
     _time: time
 
+    def log_col_names(self) -> None:
+        # Output
+        print(f"{self._BLD}{'TIME':^8}{self._RES}║ {self._BLD}{'FILE':^17}{self._RES}║ {self._BLD}NO#{self._RES}║ {self._BLD}{'LINES':^15}{self._RES}║ {self._BLD}SEVERITY{self._RES}║ {self._BLD}MESSAGE{self._RES}")
+        print("════════╬══════════════════╬════╬════════════════╬═════════╬════════")
+
     def log_routine(self, file_string_input: str, instruction_input: int, line_from_input: int, line_to_input: int, message_input: str) -> None:
         # Pull input and convert to strings
         file_string: str = file_string_input
@@ -69,7 +74,7 @@ class OutputLog():
         self._time = time.strftime("%H:%M:%S", time.localtime())
 
         # Output
-        print(f"{self._time}: {self._BLU}{file_string}: {instruction_string}: line {line_from} to {line_to}:{self._GRE}{self._BLD} ROUTINE:{self._RES} {message}")
+        print(f"{self._time}{self._RES}║ {self._BLU}{file_string}{self._RES}║ {instruction_string}{self._RES}║ line {line_from} to {line_to}{self._RES}║{self._GRE}{self._BLD} ROUTINE {self._RES}║{self._GRE} {message}{self._RES}")
 
     def log_warning(self, file_string_input: str, instruction_input: int, line_from_input: int, line_to_input: int, message_input: str) -> None:
         # Pull input and convert to strings
@@ -97,7 +102,7 @@ class OutputLog():
         self._time = time.strftime("%H:%M:%S", time.localtime())
 
         # Output
-        print(f"{self._time}: {self._BLU}{file_string}: {instruction_string}: line {line_from} to {line_to}:{self._YEL}{self._BLD} WARNING:{self._RES} {message}")
+        print(f"{self._time}{self._RES}║ {self._BLU}{file_string}{self._RES}║ {instruction_string}{self._RES}║ line {line_from} to {line_to}{self._RES}║{self._YEL}{self._BLD} WARNING {self._RES}║{self._YEL} {message}{self._RES}")
 
     def log_fatal(self, file_string_input: str, instruction_input: int, line_from_input: int, line_to_input: int, message_input: str) -> None:
         # Pull input and convert to strings
@@ -125,4 +130,4 @@ class OutputLog():
         self._time = time.strftime("%H:%M:%S", time.localtime())
 
         # Output
-        print(f"{self._time}: {self._BLU}{file_string}: {instruction_string}: line {line_from} to {line_to}:{self._RED}{self._BLD} FATAL  :{self._RES} {message}")
+        print(f"{self._time}{self._RES}║ {self._BLU}{file_string}{self._RES}║ {instruction_string}{self._RES}║ line {line_from} to {line_to}{self._RES}║{self._RED}{self._BLD} FATAL   {self._RES}║{self._RED} {message}{self._RES}")
