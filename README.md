@@ -15,6 +15,10 @@ Visit the following to find more information about the two projects:
     </a>
 </p>
 
+<br/><br/>
+### Grab the latest release [HERE](https://github.com/FluffyFlower/3D-Settings-Manager-Linux/releases/tag/v1.0.3)
+<br/>
+
 # Key Features
 - ### GUI Wrapper for DXVK & vkBasalt:
   - Easily control and configure critical settings for DXVK and vkBasalt.
@@ -27,7 +31,7 @@ Visit the following to find more information about the two projects:
   - Quickly load settings to populate the GUI dropdowns with the saved configuration for the selected game, or save settings to apply your changes; enabling quick tweaking of settings.
 - ### Linux Native, Distro Agnostic Release:
   - Built specifically for the Linux ecosystem and distributed as a convenient, ready to run Appimage.
- 
+
 # Supported Settings & Values
 | Setting | Possible Values | DXVK or vkBasalt |
 | ------- | --------------- | ---------------- |
