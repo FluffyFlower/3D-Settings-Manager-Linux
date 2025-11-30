@@ -74,7 +74,13 @@ jobs:
         run: |
           wget -c https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
           chmod +x appimagetool-x86_64.AppImage
-          ./appimagetool-x86_64.AppImage AppDir
+
+      - name: Build AppImage (FUSE-free)
+        run: |
+          # Extract appimagetool so we don’t need FUSE
+          ./appimagetool-x86_64.AppImage --appimage-extract
+          # Rebuild AppImage from your AppDir
+          squashfs-root/AppRun AppDir 3D-Settings-Manager.AppImage
 
       - name: Upload AppImage artifact
         uses: actions/upload-artifact@v4
