@@ -43,14 +43,14 @@ jobs:
 
           # Create .desktop file
           cat > AppDir/usr/share/applications/3D-Settings-Manager.desktop <<EOF
-[Desktop Entry]
-Name=3D-Settings-Manager
-Exec=3D-Settings-Manager
-Icon=3D-Settings-Manager
-Type=Application
-Categories=Utility;
-Terminal=false
-EOF
+          [Desktop Entry]
+          Name=3D-Settings-Manager
+          Exec=3D-Settings-Manager
+          Icon=3D-Settings-Manager
+          Type=Application
+          Categories=Utility;
+          Terminal=false
+          EOF
 
       - name: Download linuxdeploy
         run: |
