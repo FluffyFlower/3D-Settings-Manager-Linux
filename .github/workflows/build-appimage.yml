@@ -1,0 +1,86 @@
+# GitHub Actions workflow for building 3D-Settings-Manager AppImage
+# Helped/optimized by Byte 💙
+name: Build AppImage
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller pefile PyQt6 pyinstaller-hooks-contrib
+
+      - name: Build PyInstaller binary
+        run: |
+          pyinstaller --noconfirm --onefile --windowed --name "3D-Settings-Manager" main.py
+
+      - name: Prepare AppDir
+        run: |
+          mkdir -p AppDir/usr/bin
+          mkdir -p AppDir/usr/share/applications
+          mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
+
+          # Copy binary
+          cp dist/3D-Settings-Manager AppDir/usr/bin/
+
+          # Copy your icon (make sure it's 256x256 png)
+          cp icon.png AppDir/usr/share/icons/hicolor/256x256/apps/3D-Settings-Manager.png
+
+          # Create .desktop file
+          cat > AppDir/usr/share/applications/3D-Settings-Manager.desktop <<EOF
+[Desktop Entry]
+Name=3D-Settings-Manager
+Exec=3D-Settings-Manager
+Icon=3D-Settings-Manager
+Type=Application
+Categories=Utility;
+Terminal=false
+EOF
+
+      - name: Download linuxdeploy
+        run: |
+          wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+          wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+          chmod +x *.AppImage
+
+      - name: Bundle Qt into AppDir
+        run: |
+          ./linuxdeploy-x86_64.AppImage \
+            --appdir AppDir \
+            -e AppDir/usr/bin/3D-Settings-Manager \
+            -d AppDir/usr/share/applications/3D-Settings-Manager.desktop \
+            -i AppDir/usr/share/icons/hicolor/256x256/apps/3D-Settings-Manager.png \
+            --plugin qt
+
+      - name: Strip KDE/KIO (Plasma fix)
+        run: |
+          find AppDir -name "*kio*" -delete || true
+          find AppDir -name "libKF*" -delete || true
+
+      - name: Build final AppImage
+        run: |
+          wget -c https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+          chmod +x appimagetool-x86_64.AppImage
+          ./appimagetool-x86_64.AppImage AppDir
+
+      - name: Upload AppImage artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: 3D-Settings-Manager-AppImage
+          path: 3D-Settings-Manager-x86_64.AppImage
+# Workflow completed with some pup & alpha Byte assistance 🐾
