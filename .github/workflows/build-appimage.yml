@@ -79,7 +79,7 @@ jobs:
           ./appimagetool-x86_64.AppImage AppDir
 
       - name: Upload AppImage artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 3D-Settings-Manager-AppImage
           path: 3D-Settings-Manager-x86_64.AppImage
