@@ -5,6 +5,9 @@ Visit the following to find more information about the two projects:
 - [DXVK](https://github.com/doitsujin/dxvk)
 - [vkBasalt](https://github.com/DadSchoorse/vkBasalt)
 
+### You will need both vkBasalt and DXVK installed on your system to actually have the effects work!
+
+<br/><br/>
 <p align="center">
     <a href="https://ko-fi.com/S6S8XSPQX" target="_blank">
         <img 
@@ -63,6 +66,8 @@ Visit the following to find more information about the two projects:
 | <ins>**Direct X Feature Level**</ins> | | |
 | Toggle Level | *Direct X 9.1<br/>Direct X 9.2<br/>Direct X 9.3<br/>Direct X 10.0<br/>Direct X 10.1<br/>Direct X 11.0<br/>Direct X 11.1<br/>Direct X 12.0<br/>Direct X 12.1* | DXVK |
 
+vkBasalt effects order: SMAA -> FXAA -> DLS -> CAS
+
 # How it Works / How to Use
 1. Add Application
    - Push 'Add Application', Navigate to the games executable, then select it to let the manager scan and add it to the list.
@@ -81,6 +86,17 @@ Want to tweak settings?
 Want to delete an applications listing?
 1. Select the applications listing, then push 'Delete Application'
    - This removes the Application from the JSON file (manual removal of configuration files is required)
+  
+# Technologies Used
+- Python 3.11+
+- Qt6 (PyQt6)
+- pefile
+- PyInstaller
+
+# Milestones
+- [x] Initial release of appimage
+- [ ] Add KDE Plasma support
+- [ ] Add more features from DXVK / vkBasalt
   
 ## Support This Project
 If you find this tool helpful, please consider supporting its development:<br/>
