@@ -29,7 +29,7 @@ jobs:
         run: |
           pyinstaller --noconfirm --onefile --windowed --name "3D-Settings-Manager" main.py
 
-      - name: Prepare AppDir
+      - name: Bundle AppDir
         run: |
           mkdir -p AppDir/usr/bin
           mkdir -p AppDir/usr/share/applications
@@ -55,23 +55,15 @@ jobs:
       - name: Download linuxdeploy
         run: |
           wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-          wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
           chmod +x *.AppImage
           
-      - name: Install system Qt
-        run: |
-          sudo apt update
-          sudo apt install -y qt6-base-dev qt6-base-dev-tools
-          export QMAKE=/usr/lib/qt6/bin/qmake
-          
-      - name: Bundle Qt into AppDir
+      - name: Run linuxdeploy
         run: |
           ./linuxdeploy-x86_64.AppImage \
             --appdir AppDir \
             -e AppDir/usr/bin/3D-Settings-Manager \
             -d AppDir/usr/share/applications/3D-Settings-Manager.desktop \
-            -i AppDir/usr/share/icons/hicolor/256x256/apps/3D-Settings-Manager.png \
-            --plugin qt
+            -i AppDir/usr/share/icons/hicolor/256x256/apps/3D-Settings-Manager.png
 
       - name: Strip KDE/KIO (Plasma fix)
         run: |
