@@ -57,7 +57,13 @@ jobs:
           wget -c https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
           wget -c https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
           chmod +x *.AppImage
-
+          
+      - name: Install system Qt
+        run: |
+          sudo apt update
+          sudo apt install -y qt6-base-dev qt6-qmake
+          export QMAKE=/usr/lib/qt6/bin/qmake
+          
       - name: Bundle Qt into AppDir
         run: |
           ./linuxdeploy-x86_64.AppImage \
