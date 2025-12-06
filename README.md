@@ -47,11 +47,11 @@ Visit the following to find more information about the two projects:
 | Threshold | *Highest Quality<br/>Quality<br/>Balanced<br/>Low Quality<br/>Lowest Quality* | vkBasalt |
 | Max Search Steps | *x32 (Highest Quality)<br/>x16<br/>x8<br/>x4<br/>x2 (Lowest Quality)* | vkBasalt |
 | Max Diagonal Search Steps | *x16 (Highest Quality)<br/>x8<br/>x4<br/>x2<br/>x0 (Lowest Quality)* | vkBasalt |
-| Corner Rounding | *1.00 (Highest Rounding)<br/>0.75<br/>0.50<br/>0.25<br/>0.00 (Lowest Rounding) | vkBasalt |
+| Corner Rounding | *1.00 (Highest Rounding)<br/>0.75<br/>0.50<br/>0.25<br/>0.00 (Lowest Rounding)* | vkBasalt |
 | <ins>**AF**</ins><br/><sub>Anisotropic Filtering</sub> | | |
 | Level | *x16 (Highest Quality)<br/>x8<br/>x4<br/>x2<br/>x1 (Lowest Quality)* | DXVK |
 | <ins>**LOD**</ins><br/><sub>Level of Detail</sub> | | |
-| Bias | *-2.00 (Highest Quality)<br/>-1.00<br/>0.00 (Balanced)<br/>0.5<br/>1.00 (Lowest Quality) | DXVK |
+| Bias | *-2.00 (Highest Quality)<br/>-1.00<br/>0.00 (Balanced)<br/>0.5<br/>1.00 (Lowest Quality)* | DXVK |
 | Clamp Negative LOD Bias | *Enabled<br/>Disabled*| DXVK |
 | <ins>**CAS**</ins><br/><sub>Contrast Adaptive Sharpening</sub> | | |
 | Level | *1.00 (Sharpest)<br/>0.75<br/>0.50<br/>0.25<br/>0.00 (Softest)* | vkBasalt |
